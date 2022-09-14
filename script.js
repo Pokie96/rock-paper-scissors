@@ -6,4 +6,10 @@ function getComputerChoice(array){
     return array[index];
 }
 
-getComputerChoice(gameChoices);
+function checkUserChoice(){
+    if (gameChoices.includes(userChoice.toLowerCase())){
+        alert("That is one of the options!")
+    } else{
+        alert("You can only enter either rock paper or scissors!")
+    }
+}
