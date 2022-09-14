@@ -4,6 +4,7 @@ let userChoice;
 let userScore;
 let computerScore;
 
+//Loop through 5 games of rock paper scissors
 function game(){
     userScore = 0;
     computerScore = 0;
@@ -25,11 +26,13 @@ function game(){
     }
 }
 
+//Get the computers random choice for game
 function getComputerChoice(array){
     let index = Math.floor(Math.random() * 3);
     return array[index];
 }
 
+//Check user input is valid
 function checkUserChoice(){
     if (!gameChoices.includes(userChoice.toLowerCase())){
         alert("You can only enter either rock paper or scissors, or cancel to end game!")
@@ -37,6 +40,7 @@ function checkUserChoice(){
     } 
 }
 
+//Play through one round of rock paper scissors and evaluate winner of round.
 function playRound(){
     if (userChoice === "rock"){
         if (computerChoice === "scissors"){
