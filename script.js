@@ -4,27 +4,6 @@ let userChoice;
 let userScore;
 let computerScore;
 
-//Loop through 5 games of rock paper scissors
-function game(){
-    userScore = 0;
-    computerScore = 0;
-    for(let i = 0; i < 5; i++){
-        computerChoice = getComputerChoice(gameChoices);
-        userChoice = prompt("Enter your choice (rock paper or scissors) or cancel to end game");
-        if (userChoice.toLowerCase() === "cancel"){
-            return;
-        }
-        checkUserChoice();
-        playRound(); 
-    }
-    if(userScore > computerScore){
-        alert(`You win! You scored ${userScore} and the computer scored ${computerScore}`);
-    } else if(computerScore > userScore){
-        alert(`You lost! You scored ${userScore} and the computer scored ${computerScore}`);
-    } else{
-        alert(`Its a draw! You have both scored ${userScore}`);
-    }
-}
 
 //Get the computers random choice for game
 function getComputerChoice(array){
