@@ -3,6 +3,9 @@ let computerChoice;
 let userChoice;
 let userScore;
 let computerScore;
+const rockBtn = document.getElementById('rock-button');
+const paperBtn = document.getElementById('paper-button');
+const scissorsBtn = document.getElementById('scissors-button');
 
 
 //Get the computers random choice for game
