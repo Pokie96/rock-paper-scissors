@@ -1,12 +1,25 @@
 const gameChoices = ["rock", "paper", "scissors"];
-let computerChoice;
-let userChoice;
+let computerChoice = getComputerChoice(gameChoices);
 let userScore;
 let computerScore;
+
+//DOM selectors
 const rockBtn = document.getElementById('rock-button');
 const paperBtn = document.getElementById('paper-button');
 const scissorsBtn = document.getElementById('scissors-button');
 
+//Button event listeners
+rockBtn.addEventListener('click', function(){
+    playRound('rock');
+});
+
+paperBtn.addEventListener('click', function(){
+    playRound('paper');
+});
+
+scissorsBtn.addEventListener('click', function(){
+    playRound('scissors');
+});
 
 //Get the computers random choice for game
 function getComputerChoice(array){
@@ -23,7 +36,7 @@ function checkUserChoice(){
 }
 
 //Play through one round of rock paper scissors and evaluate winner of round.
-function playRound(){
+function playRound(userChoice){
     if (userChoice === "rock"){
         if (computerChoice === "scissors"){
             alert(`You are the winner! ${userChoice} beats ${computerChoice}.`);
@@ -63,4 +76,5 @@ function playRound(){
             userScore += 1;
         }
     }
+    computerChoice = getComputerChoice(gameChoices);
 }
