@@ -14,15 +14,15 @@ const userScoreDisplay = document.getElementById('user-score')
 
 
 //Button event listeners
-rockBtn.addEventListener('click', function(){
+rockBtn.addEventListener('click', function clickFunction(){
     playRound('rock');
 });
 
-paperBtn.addEventListener('click', function(){
+paperBtn.addEventListener('click', function clickFunction(){
     playRound('paper');
 });
 
-scissorsBtn.addEventListener('click', function(){
+scissorsBtn.addEventListener('click', function clickFunction(){
     playRound('scissors');
 });
 
@@ -88,8 +88,30 @@ function playRound(userChoice){
         }
     }
     computerChoice = getComputerChoice(gameChoices);
-    //Display scores
+    //Display and update scores
     computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
     userScoreDisplay.textContent = `User Score: ${userScore}`;
+    checkWinner();
+}
+
+//Check for winner
+function checkWinner(){
+    if(userScore === 5 && computerScore === 5){
+        rockBtn.style.display = 'none';
+        scissorsBtn.style.display = 'none';
+        paperBtn.style.display = 'none';
+        alert("It's a draw!");
+    }
+    else if(userScore === 5){
+        rockBtn.style.display = 'none';
+        scissorsBtn.style.display = 'none';
+        paperBtn.style.display = 'none';
+        alert('You are the winner!');
+    }else if(computerScore === 5){
+        rockBtn.style.display = 'none';
+        scissorsBtn.style.display = 'none';
+        paperBtn.style.display = 'none';
+        alert('The computer beat you!')
+    }
 }
 
