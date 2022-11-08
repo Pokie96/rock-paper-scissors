@@ -73,8 +73,6 @@ function playRound(userChoice){
             computerScore += 1;
         } else{
             alert(`It's a draw! You both chose ${userChoice}`)
-            computerScore += 1;
-            userScore += 1;
         }
     } else if (userChoice === "scissors"){
         if (computerChoice === "paper"){
@@ -85,8 +83,6 @@ function playRound(userChoice){
             computerScore += 1;
         } else{
             alert(`It's a draw! You both chose ${userChoice}`)
-            computerScore += 1;
-            userScore += 1;
         }
     } else if (userChoice === "paper"){
         if (computerChoice === "rock"){
@@ -97,8 +93,6 @@ function playRound(userChoice){
             computerScore += 1;
         } else{
             alert(`It's a draw! You both chose ${userChoice}`)
-            computerScore += 1;
-            userScore += 1;
         }
     }
     computerChoice = getComputerChoice(gameChoices);
