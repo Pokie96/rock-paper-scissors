@@ -12,6 +12,7 @@ const scissorsBtn = document.getElementById('scissors-button');
 const computerScoreDisplay = document.getElementById('computer-score');
 const userScoreDisplay = document.getElementById('user-score')
 const resetBtn = document.getElementById('reset-button');
+const textResultDisplay = document.getElementById('text-result')
 
 
 //Hide reset button by default
@@ -64,41 +65,43 @@ function checkUserChoice(){
 
 //Play through one round of rock paper scissors and evaluate winner of round.
 function playRound(userChoice){
+    let displayMessage = '';
     if (userChoice === "rock"){
         if (computerChoice === "scissors"){
-            alert(`You are the winner! ${userChoice} beats ${computerChoice}.`);
+            displayMessage = `You are the winner! ${userChoice} beats ${computerChoice}.`;
             userScore += 1;
         } else if(computerChoice === "paper"){
-            alert(`The computer is the winner! ${computerChoice} beats ${userChoice}.`);
+            displayMessage = `The computer is the winner! ${computerChoice} beats ${userChoice}.`;
             computerScore += 1;
         } else{
-            alert(`It's a draw! You both chose ${userChoice}`)
+            displayMessage = `It's a draw! You both chose ${userChoice}`;
         }
     } else if (userChoice === "scissors"){
         if (computerChoice === "paper"){
-            alert(`You are the winner! ${userChoice} beats ${computerChoice}.`);
+            displayMessage = `You are the winner! ${userChoice} beats ${computerChoice}.`;
             userScore += 1;
         } else if(computerChoice === "rock"){
-            alert(`The computer is the winner! ${computerChoice} beats ${userChoice}.`);
+            displayMessage = `The computer is the winner! ${computerChoice} beats ${userChoice}.`;
             computerScore += 1;
         } else{
-            alert(`It's a draw! You both chose ${userChoice}`)
+            displayMessage = `It's a draw! You both chose ${userChoice}`;
         }
     } else if (userChoice === "paper"){
         if (computerChoice === "rock"){
-            alert(`You are the winner! ${userChoice} beats ${computerChoice}.`);
+            displayMessage = `You are the winner! ${userChoice} beats ${computerChoice}.`;
             userScore += 1;
         } else if(computerChoice === "scissors"){
-            alert(`The computer is the winner! ${computerChoice} beats ${userChoice}.`);
+            displayMessage = `The computer is the winner! ${computerChoice} beats ${userChoice}.`;
             computerScore += 1;
         } else{
-            alert(`It's a draw! You both chose ${userChoice}`)
+            displayMessage = `It's a draw! You both chose ${userChoice}`;
         }
     }
     computerChoice = getComputerChoice(gameChoices);
     //Display and update scores
     computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
     userScoreDisplay.textContent = `User Score: ${userScore}`;
+    textResultDisplay.textContent = displayMessage;
     checkWinner();
 }
 
@@ -109,20 +112,20 @@ function checkWinner(){
         scissorsBtn.style.display = 'none';
         paperBtn.style.display = 'none';
         resetBtn.style.display = 'inline';
-        alert("It's a draw!");
+        textResultDisplay.textContent = "It's a draw!";
     }
     else if(userScore === 5){
         rockBtn.style.display = 'none';
         scissorsBtn.style.display = 'none';
         paperBtn.style.display = 'none';
         resetBtn.style.display = 'inline';
-        alert('You are the winner!');
+        textResultDisplay.textContent = 'You are the winner!';
     }else if(computerScore === 5){
         rockBtn.style.display = 'none';
         scissorsBtn.style.display = 'none';
         paperBtn.style.display = 'none';
         resetBtn.style.display = 'inline';
-        alert('The computer beat you!')
+        textResultDisplay.textContent = 'The computer beat you!';
     }
 }
 
