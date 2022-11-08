@@ -19,3 +19,8 @@ button{
     font-size: 40px;
     border-radius: 20px;
 }
+
+#results{
+    font-size: 60px;
+    text-align: center;
+}
